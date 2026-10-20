@@ -2,7 +2,11 @@ VERSION := 1.0
 TARGET := $(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 BUILD_DIR ?= build
 
+
 .PHONY: all
+
+.INTERMEDIATE: $(TARGET)-crop.pdf cross-scaled.pdf
+
 
 all: $(TARGET)
 
