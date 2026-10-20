@@ -4,7 +4,7 @@ dorev
 Miscellaneous texts in pre-reform Russian orthography.
 
 - [Воздви́женіе Креста Господня &nbsp;v1.1](https://github.com/arbitrary-dev/dorev/releases/download/cross-1.1/cross-1.1.pdf)
-- [Житіе ст. Андрея &nbsp;v1.0](https://github.com/arbitrary-dev/dorev/releases/download/andrej-1.0/andrej-1.0.pdf)
+- [Житіе ст. Андрея юродиваго &nbsp;v1.0](https://github.com/arbitrary-dev/dorev/releases/download/andrej-1.0/andrej-1.0.pdf)
 - [Ст. мцц. Соѳі́я, Вѣра, Любовь и Надежда &nbsp;v1.1](https://github.com/arbitrary-dev/dorev/releases/download/sofia-1.1/sofia-1.1.pdf)
 - [Расписаніе Богослуженій в г. Иллу́кстѣ на октябрь 2026 г. &nbsp;v4](https://github.com/arbitrary-dev/dorev/releases/download/schedule-ilukste-2026-10-v4/schedule-ilukste-2026-10-v4.pdf)
 - [Расписаніе Богослуженій в храмѣ Покро́ва Пресвятыя Богородицы на октябрь 2026 г. &nbsp;v2](https://github.com/arbitrary-dev/dorev/releases/download/schedule-pokrov-2026-10-v2/schedule-pokrov-2026-10-v2.pdf)
