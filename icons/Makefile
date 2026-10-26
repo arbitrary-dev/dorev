@@ -1,4 +1,4 @@
-VERSION := 1.0
+VERSION := 1.1
 TARGET := $(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 BUILD_DIR ?= build
 
@@ -17,22 +17,22 @@ $(TARGET)-orig.pdf:
 		$@
 
 first-page.pdf: images/collage_grok.png
-	pdfjam $< --outfile $@
+	pdfjam --a5paper --scale 0.9 $< --outfile $@
 
 second-page.pdf: $(TARGET)-orig.pdf
 	./compile-second-page.py $< $@
 
-$(TARGET)-crop.pdf: $(TARGET)-orig.pdf
-	pdfjam $< 6-14 --outfile $@
+$(TARGET)-crop.pdf: second-page.pdf $(TARGET)-orig.pdf
+	pdfjam --a5paper --scale 1.039 $^ 6-14 --outfile $@
 
 last-page.pdf: ../cross.pdf
-	pdfjam --scale 0.3 $< --outfile $@ \
+	pdfjam --a5paper --scale 0.3 $< --outfile $@ \
 		--latex /usr/bin/lualatex \
 		--preamble "\usepackage{fontspec}\setmainfont{Old Standard}" \
-		--picturecommand "\put(298,64){\makebox(0,0)[b]{\Large \
+		--picturecommand "\put(210,72){\makebox(0,0)[b]{\large \
 			Господи Іисусе Христе, Сыне Божiй, помилуй мя, грѣшнаго.}}"
 
-$(TARGET): %: first-page.pdf second-page.pdf $(TARGET)-crop.pdf last-page.pdf
+$(TARGET): %: first-page.pdf $(TARGET)-crop.pdf last-page.pdf
 	@mkdir -p $(BUILD_DIR)
 	pdfjam --landscape --a4paper --delta "1.5cm 0cm" --booklet true \
 		$^ --outfile $(BUILD_DIR)/$@-$(VERSION).pdf
