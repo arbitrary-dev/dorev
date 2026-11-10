@@ -1,5 +1,5 @@
 TARGET  := $(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
-TARGETS := ilukste-2026-11 pokrov-2026-11-v2
+TARGETS := ilukste-2026-11-v2 pokrov-2026-11-v2
 TARGETSS := $(patsubst %.tex,%,$(wildcard *.tex))
 
 BUILD_DIR ?= build
